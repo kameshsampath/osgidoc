@@ -1,0 +1,22 @@
+buildscript {
+	repositories {
+		ivy {
+		      url 'https://bndtools.ci.cloudbees.com/job/bnd.master/lastSuccessfulBuild/artifact/dist/bundles'
+		      layout 'pattern', { artifact '[module]/[artifact]-[revision].[ext]' /* OSGi repo pattern */ }
+   		}
+   		maven { 
+    		url 'http://dl.bintray.com/bnd/gradle'
+  		}	
+		mavenLocal()
+		jcenter()
+		mavenCentral()
+	}
+	
+	dependencies {
+		classpath 'org.workspace7.gradle:org.workspace7.gradle.plugins.osgidoc:1.0.2-SNAPSHOT'
+	}
+}
+
+apply plugin: 'org.workspace7.gradle.plugins.osgidoc'
+
+sourceCompatibility = 1.7

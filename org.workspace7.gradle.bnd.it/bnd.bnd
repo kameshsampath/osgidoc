@@ -1,0 +1,12 @@
+-dsannotations: *
+-sources: true
+Bundle-Version: 1.0.0.${tstamp}
+-metatype: *
+Private-Package: org.workspace7.impl
+Export-Package: org.workspace7.api
+-buildpath: \
+	biz.aQute.bnd.annotation,\
+	osgi.core;version=6.0,\
+	osgi.cmpn;version=5.0
+-dependson: \
+	org.workspace7.gradle.plugins.osgidoc
