@@ -6,7 +6,6 @@ import org.workspace7.api.Printer;
 
 @Component(
 				name = "org.workspace7.simpleprinter",
-				immediate = true,
 				property = {
 					"printer.type=simple",
 },

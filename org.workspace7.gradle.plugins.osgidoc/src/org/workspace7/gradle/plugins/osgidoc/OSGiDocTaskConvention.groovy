@@ -121,17 +121,19 @@ class OSGiDocTaskConvention {
 				def String includes = builder.getIncluded()
 
 				def String osgiDocsInclude = "\"OSGI-DOC=${docsDir}\""
-
+				
 				if (includes) {
 					includes = "${jarInclude},${includes},${osgiDocsInclude}"
 				} else {
 					includes = "${jarInclude},${osgiDocsInclude}"
 				}
+				
+				logger.debug "OSGI Includes: ${includes}"
 
 				builder.setProperty(Constants.INCLUDERESOURCE, includes)
 
 				Jar bundleJar = builder.build()
-				bundleJar.updateModified(System.currentTimeMillis(), 'Added OSGI-DOCS to the bundle')
+				bundleJar.updateModified(System.currentTimeMillis(), 'Added OSGI-DOC to the bundle')
 
 				//TODO Log errors
 

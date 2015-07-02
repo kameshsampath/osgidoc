@@ -1,5 +1,17 @@
 /**
- * 
+ * Copyright 2015-present Kamesh Sampath<kamesh.sampath@hotmail.com)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.workspace7.osgidoc.webconsole;
@@ -27,6 +39,8 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.util.tracker.BundleTracker;
 import org.osgi.util.tracker.BundleTrackerCustomizer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Kamesh Sampath
@@ -35,15 +49,15 @@ import org.osgi.util.tracker.BundleTrackerCustomizer;
 @Component(
 				name = "org.workspace7.osgidoc.webconsole",
 				property = {
-					PLUGIN_LABEL + "=osgidoc", PLUGIN_TITLE + "=OSGi Doc"
+					PLUGIN_LABEL + "=" + OSGiDocPluginConstants.PLUGIN_LABEL,
+					PLUGIN_TITLE + "=" + OSGiDocPluginConstants.PLUGIN_TITLE
 }, service = {
 	Servlet.class
 })
 public class OSGiDocWebConsolePlugin extends AbstractWebConsolePlugin {
 
-	final String PLUGIN_TITLE = "OSGi Doc";
-	final String PLUGIN_LABEL = "osgidoc";
-	final String OSGI_DOCS_FOLDER = "/OSGI-DOC";
+	private final Logger logger =
+		LoggerFactory.getLogger(OSGiDocWebConsolePlugin.class);
 
 	final Hashtable<String, Bundle> osgidocBundles =
 		new Hashtable<String, Bundle>();
@@ -82,11 +96,9 @@ public class OSGiDocWebConsolePlugin extends AbstractWebConsolePlugin {
 	protected void renderContent(
 		HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log("RadheKrishna!");
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter printWriter = response.getWriter();
-		printWriter.println("<h1>RadheKrishna!</h1>");
 		printWriter.println("<ul>");
 		for (Entry<String, Bundle> entry : osgidocBundles.entrySet()) {
 			printWriter.println(
@@ -137,19 +149,42 @@ public class OSGiDocWebConsolePlugin extends AbstractWebConsolePlugin {
 		}
 	}
 
+	/**
+	 * The utility method to add OSGi documentation bundles tracked bundle list
+	 * 
+	 * @param bundleContext
+	 *            - the {@link BundleContext} form where we can fetch the
+	 *            bundles
+	 */
 	protected void handleExistingDocBundles(BundleContext bundleContext) {
 		Bundle[] bundles = bundleContext.getBundles();
 
 		for (Bundle bundle : bundles) {
 			if (hasDocs(bundle) && bundle != null) {
-				System.out.println("adding existing bundles");
+				logger.trace("Adding existing bundles");
 				osgidocBundles.put(bundle.getSymbolicName(), bundle);
-				if(resourceProvider!=null){
+				if (resourceProvider != null) {
 					resourceProvider.addBundle(bundle);
 				}
 			}
 		}
 
+	}
+
+	/**
+	 * The utility method to clear the existing OSGi documentation bundles
+	 */
+	protected void clearExistingDocBundles() {
+
+		logger.trace("Clear existing bundles");
+
+		if (resourceProvider != null) {
+			for (String bsn : osgidocBundles.keySet()) {
+				resourceProvider.removeBundle(bsn);
+			}
+		}
+
+		osgidocBundles.clear();
 	}
 
 	@Override
@@ -161,7 +196,7 @@ public class OSGiDocWebConsolePlugin extends AbstractWebConsolePlugin {
 	private boolean hasDocs(Bundle bundle) {
 
 		URL docsFolderURL =
-			bundle.getEntry(OSGI_DOCS_FOLDER);
+			bundle.getEntry(OSGiDocPluginConstants.OSGI_DOCS_FOLDER);
 
 		return (docsFolderURL != null);
 	}
@@ -176,7 +211,7 @@ public class OSGiDocWebConsolePlugin extends AbstractWebConsolePlugin {
 				BundleEvent.INSTALLED == event.getType())) {
 
 				if (hasDocs(bundle)) {
-					System.out.println("Adding bundle to be tracked:" +
+					logger.debug("Adding bundle to be tracked:" +
 						bundle.getSymbolicName());
 					resourceProvider.addBundle(bundle);
 					osgidocBundles.put(bundle.getSymbolicName(), bundle);
@@ -196,7 +231,7 @@ public class OSGiDocWebConsolePlugin extends AbstractWebConsolePlugin {
 
 			if (object != null && ((BundleEvent.UPDATED == event.getType()))) {
 				if (hasDocs(object)) {
-					System.out.println("Update and add :" + trackedBsn);
+					logger.debug("Update and add :" + trackedBsn);
 					osgidocBundles.put(trackedBsn, object);
 				}
 			}
@@ -212,8 +247,9 @@ public class OSGiDocWebConsolePlugin extends AbstractWebConsolePlugin {
 				(BundleEvent.UNINSTALLED == event.getType()) &&
 				(osgidocBundles.containsKey(trackedBsn))) {
 				if (hasDocs(object)) {
-					System.out.println("Untrack:" + trackedBsn);
+					logger.debug("Untrack:" + trackedBsn);
 					osgidocBundles.remove(trackedBsn);
+					resourceProvider.removeBundle(trackedBsn);
 				}
 			}
 		}
