@@ -1,0 +1,45 @@
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
+
+repositories {
+	maven { 
+    	url 'http://dl.bintray.com/bnd/gradle'
+  	}	
+  	jcenter()  	
+  	mavenCentral()
+}
+
+dependencies {
+	compile 'org.gradle:gradle-core:2.0'
+    compile 'org.gradle:gradle-base-services:2.0'
+    compile 'org.gradle:gradle-base-services-groovy:2.0'
+    compile 'org.gradle:gradle-plugins:2.0'
+    compile 'org.gradle:gradle-native:2.0'
+    compile 'org.codehaus.groovy:groovy-all:2.3.3'
+	compile 'commons-io:commons-io:2.4'
+	compile 'org.freemarker:freemarker:2.3.22'
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+sourceSets {
+   
+    main {
+        groovy.srcDirs = java.srcDirs
+    }
+    
+    test {
+        groovy.srcDirs = java.srcDirs
+    }
+}
+
+publishing{
+	
+	publications {
+		maven(MavenPublication) {
+			groupId 'org.workspace7.gradle'
+			artifactId 'org.workspace7.gradle.plugins.osgidoc'
+			version '1.0.2-SNAPSHOT'
+			from components.java
+		}
+	}
+}

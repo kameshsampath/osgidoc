@@ -1,0 +1,20 @@
+Bundle-Version: 1.0.0.${tstamp}
+Bundle-Name: org.workspace7.gradle.plugins.osgidoc
+Bundle-Description: Gradle Plugin to generate OSGi documentation
+Bundle-Copyright: Kamesh Sampath
+Bundle-License: Apache v2
+Bundle-Category: osgi
+Bundle-Vendor: Kamesh Sampath
+Bundle-ContactAddress: kamesh.sampath@hotmail.com
+-buildpath: \
+	biz.aQute.bndlib;version=latest,\
+	org.apache.commons.io;version=2.2
+-includeresource: \
+	 OSGI-OPT/src=src, \
+  	 resources,\
+  	 @${repo;biz.aQute.bndlib;latest}!/!META-INF/*
+Private-Package: \
+	org.workspace7.gradle.plugins.*
+
+## to supress bnd warning messages
+-fixupmessages: "Unused Private*org.workspace7.gradle.plugins" 
