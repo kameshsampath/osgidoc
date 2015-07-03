@@ -15,9 +15,10 @@
 *
 -->
 <#include 'header.ftl'/>
-<body>
 <#include 'navbar.ftl'/>
-	<div id="content">
+<#include 'bundle_info.ftl'/> 
+<#include 'scr_docs_nav.ftl'>
+<div id="scr-doc-content">
 		<div id="header">
 			<#assign scrService = scr.service>
 			<#if scrService??>
@@ -32,39 +33,47 @@
 		<br/>
 		<#if scr.properties??>
 		<div id="compProperties">
-			<table border="1" width="100%" cellpadding="3" cellspacing="0">
-				<tr bgcolor="#CCCCFF" class="TableHeadingColor">
-				<th align="left" colspan="3"><font size="+2"> <b>Service Properties</b></font></th>
+			<table>
+				<tr class="tableHeading">
+				<th colspan="3">Service Properties</b></th>
 				</tr>
-				<tr bgcolor="#CCCCFF" class="TableSubHeadingColor">
+				<tr class="tableSubHeading">
 					<th>Name</th>
 					<th>Type</th>
 					<th>Value</th>
 				</tr>
 				<#list scr.properties as scrProp>
-					<tr bgcolor="white" class="TableRowColor">
+					<#if scrProp_index % 2 = 0>
+					  <tr class="tableRow">
+					<#else>
+					  <tr class="tableRow alt">
+					</#if>
 						<td>${scrProp.name}</td>					
 						<td>${scrProp.type}</td>						
 						<td>${scrProp.value}</td>
 					</tr>
 				</#list>
 			</table>
-		</div
+		</div>
 		</#if>
 	   <br/>
 	   <#if scr.references??>
 		<div id="compProperties">
-			<table border="1" width="100%" cellpadding="3" cellspacing="0">
-				<tr bgcolor="#CCCCFF" class="TableHeadingColor">
-				<th align="left" colspan="3"><font size="+2"> <b>Refrences</b></font></th>
+			<table>
+				<tr class="tableHeading">
+				<th colspan="3">Refrences</th>
 				</tr>
-				<tr bgcolor="#CCCCFF" class="TableSubHeadingColor">
+				<tr class="tableSubHeading">
 					<th>Name</th>
 					<th>Interface</th>
 					<th>bind</th>
 				</tr>
 				<#list scr.references as ref>
-					<tr bgcolor="white" class="TableRowColor">
+					<#if ref_index % 2 = 0>
+					  <tr class="tableRow">
+					<#else>
+					  <tr class="tableRow alt">
+					</#if>
 						<td>${ref.name}</td>					
 						<td>${ref.refinterface}</td>						
 						<td>${ref.bind}</td>
@@ -72,8 +81,7 @@
 					</tr>
 				</#list>
 			</table>
-		</div
-		</#if>
-	</div>
-</body>
+		</div>
+	</#if>
+</div>
 <#include 'footer.ftl'/>

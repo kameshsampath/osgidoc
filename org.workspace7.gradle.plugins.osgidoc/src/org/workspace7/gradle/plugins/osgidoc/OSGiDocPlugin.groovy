@@ -27,6 +27,8 @@ import org.gradle.api.Project
 public class OSGiDocPlugin implements Plugin<Project> {
 
 	public static final String PLUGIN_ID = 'org.workspace7.gradle.plugins.osgidoc'
+	public static final String FTL_TEMPLATES_FOLDER = '/templates'
+	public static final String OSGi_DOC_STYLESHEET = 'osgidoc.css'
 	
 	def logger
 

@@ -38,7 +38,7 @@ publishing{
 		maven(MavenPublication) {
 			groupId 'org.workspace7.gradle'
 			artifactId 'org.workspace7.gradle.plugins.osgidoc'
-			version '1.0.2-SNAPSHOT'
+			version '1.0.3-SNAPSHOT'
 			from components.java
 		}
 	}

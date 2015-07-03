@@ -15,81 +15,76 @@
 *
 -->
 <#include 'header.ftl'/>
-<body>
 <#include 'navbar.ftl'/>
 <#include 'bundle_info.ftl'/>
-<p>&nbsp;
-<table border="1" width="100%" cellpadding="3" cellspacing="0"
-       SUMMARY="">
-    <tr bgcolor="#CCCCFF" class="TableHeadingColor">
-        <th align="left" colspan="2"><font size="+2"> <b>MANIFEST</b></font></th>
+<table>
+    <tr class="tableHeading">
+        <th colspan="3">MANIFEST</th>
     </tr>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Bnd-LastModified</b></td>
+    <tr class="tableRow">
+        <td>Bnd-LastModified</td>
         <td>${bndLastModified}</td>
     </tr>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Build-Jdk</b></td>
+    <tr class="tableRow alt">
+        <td>Build-Jdk</td>
         <td>${buildJdk}</td>
     </tr>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Bundle-ManifestVersion</b></td>
+    <tr class="tableRow">
+        <td>Bundle-ManifestVersion</td>
         <td>${bundleManifestVersion}</td>
     </tr>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Bundle-SymbolicName</b></td>
+    <tr class="tableRow alt">
+        <td>Bundle-SymbolicName</td>
         <td>${bundleSymbolicName}</td>
     </tr>
 <#if bundleName??>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Bundle-Name</b></td>
+    <tr class="tableRow">
+        <td>Bundle-Name</td>
         <td>${bundleName}</td>
     </tr>
 </#if>
 <#if bundleCategory??>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Bundle-Category</b></td>
+    <tr class="tableRow alt">
+        <td>Bundle-Category</td>
         <td>${bundleCategory}</td>
     </tr>
 </#if>
 <#if bundleVendor??>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>BBundle-Vendor</b></td>
+    <tr class="tableRow">
+        <td>BBundle-Vendor</td>
         <td>${bundleVendor}</td>
     </tr>
 </#if>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Bundle-Version</b></td>
+    <tr class="tableRow alt">
+        <td>Bundle-Version</td>
         <td>${bundleVersion}</td>
     </tr>
 <#if bundleActivator??>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Bundle-Activator</b></td>
+    <tr class="tableRow">
+        <td>Bundle-Activator</td>
         <td>${bundleActivator}</td>
     </tr>
 </#if>
 <#if bundleDocURL??>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Bundle-DocURL</b></td>
+    <tr class="tableRow alt">
+        <td>Bundle-DocURL</td>
         <td><a
                 href="${bundleDocURL}"><#if bundleName??>${bundleName}<#else>${bundleSymbolicName}</#if></a></td>
     </tr>
 </#if>
 <#if bundleLicense??>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Bundle-License</b></td>
+    <tr class="tableRow">
+        <td>Bundle-License</td>
         <td>${bundleLicense}</td>
     </tr>
 </#if>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Manifest-Version</b></td>
+    <tr class="tableRow alt">
+        <td>Manifest-Version</td>
         <td>${manifestVersion}</td>
     </tr>
-    <tr bgcolor="white" class="TableRowColor">
-        <td width="20%"><b>Tool</b></td>
+    <tr class="tableRow">
+        <td>Tool</td>
         <td>${tool}</td>
     </tr>
 </table>
-</p>
-</body>
 <#include 'footer.ftl'/>

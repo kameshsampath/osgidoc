@@ -14,24 +14,30 @@
 * limitations under the License.
 *
 -->
-<hr>
-<center>
-<#if bundleName??>
-    <h1>${bundleName}-${bundleVersion}</h1>
-<#else>
-    <h1>${bundleSymbolicName}-${bundleVersion}</h1>
-</#if>
-</center>
-<div style="text-align: center;">&nbsp;</div>
-<p style="text-align: justify;">
-<#if bundleDocURL??>
-    <a
-            href="${bundleDocURL}"
-            target="_top"><em>${bundleSymbolicName}</em></a>
-<#else>
-    <em>${bundleSymbolicName}</em>
-</#if>
-</p>
-<#if bundleDescription??>
-<p style="text-align: justify;">${bundleDescription}</p>
-</#if>
+
+<div id="osgidoc-content" data-senna-surface>
+  
+  <div id="osgidoc-content-default">
+	 
+		<!-- HEADER and DESCRIPTION -->
+
+        <div id="osgidoc-content-header" class="osgidoc-header">
+           <p> 
+			 <#if bundleName??>
+                <span class="osgidoc-title">${bundleName}</span>
+			<#else>
+				<span class="osgidoc-title">${bundleSymbolicName}</span>
+			</#if>
+             <span class="osgidoc-version">${bundleVersion}</span>
+           </p>
+        </div>
+   		
+        <section id="osgidoc-content-header-desc">
+		  <h1>Description:</h1>
+		 <#if bundleDescription??>
+           <p  class="osgidoc-description"> 
+             <span>${bundleDescription}<span>
+           <p>        
+		 </#if>
+        </section>
+ <p>&nbsp;</p>

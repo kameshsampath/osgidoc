@@ -1,0 +1,142 @@
+body {
+	background-color: #FFFFFF;
+	background-image: url(resources/bkg_gradient.gif);
+	background-repeat: repeat-x;
+	margin: 0;
+	font-family: 'Lucida Grande', Geneva, Verdana, Arial, sans-serif;
+	font-size: 12px;
+	padding: 0em 1em;
+	color: #333;
+}
+
+a {
+	text-decoration: none;
+	color: #1b98f8;
+}
+
+font {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	font-weight: inherit;
+}
+
+hr {
+	display: none;
+}
+
+.osgidoc-header {
+	background-image: url(resources/h1_hdr.png);
+	background-repeat: no-repeat;
+	border-top: 1px dotted #CCCCCC;
+	line-height: 1.2em;
+	padding: 1.5em;
+	margin-top: 0px;
+	text-align: left;
+}
+
+.osgidoc-title {
+	color: #182737;
+	font-size: 1.8em;
+	margin: 0;
+}
+
+.osgidoc-version {
+	float: right;
+	position: relative;
+}
+
+.osgidoc-description .osgidoc-version {
+	color: rgb(126, 159, 194);
+	font-size: 14px;
+	margin: 2px 0 15px;
+}
+
+table, th, td {
+	border: 1px solid #E6E7E8;
+}
+
+table, th {
+	border-collapse: collapse
+}
+
+table {
+	width: 100%;
+}
+
+tr {
+	color: #182737;
+}
+
+tr.alt td {
+	background-color: #EEEEFF;
+}
+
+.tableHeading {
+	background: #000000 url(resources/bkg_blkheader.png) repeat-x scroll
+		left top;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	height: 31px;
+	text-align: left;
+	padding: 1.5em;
+}
+
+.tableHeading th {
+	padding-left: 10px;
+}
+
+.tableSubHeading {
+	background: #EEEEFF
+}
+
+.tableRow {
+	background: #FFFFFF;
+	border-color: #E6E7E8;
+}
+
+.tableRow td {
+	line-height: 175%;
+	padding-left: 10px;
+	vertical-align: bottom;
+}
+
+.NavBarCell1 {
+	background-color: #ffffff;
+	background-image: url(resources/bkgheader.png);
+	background-repeat: repeat-x scroll left top;
+	line-height: 2em;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.NavBarCell1 ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.NavBarCell1 li {
+	float: left;
+}
+
+.NavBarCell1 a {
+	color: #ffffff;
+	display: block;
+	width: 70px;
+}
+
+#scr-doc-nav {
+	line-height:30px;
+    width:20%;
+    float:left;
+    padding:20px;
+}
+
+#scr-doc-content{
+	width:70%;
+    float:left;
+    padding:20px;
+}

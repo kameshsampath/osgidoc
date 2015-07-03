@@ -18,6 +18,9 @@
 <html>
 <head>
     <title>OSGi Doc - ${bundleSymbolicName}</title>
-    <link REL="stylesheet" type="text/css" href="stylesheet.css"
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="osgidoc.css"
           title="Style">
+	<script type="text/javascript" src="resources/senna.js"></script>
 </head>
+<body data-senna>

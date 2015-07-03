@@ -13,7 +13,7 @@ buildscript {
 	}
 	
 	dependencies {
-		classpath 'org.workspace7.gradle:org.workspace7.gradle.plugins.osgidoc:1.0.2-SNAPSHOT'
+		classpath 'org.workspace7.gradle:org.workspace7.gradle.plugins.osgidoc:1.0.3-SNAPSHOT'
 	}
 }
 

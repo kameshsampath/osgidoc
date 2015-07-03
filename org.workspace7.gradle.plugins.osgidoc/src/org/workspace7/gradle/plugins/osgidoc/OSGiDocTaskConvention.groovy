@@ -15,7 +15,9 @@
  */
 package org.workspace7.gradle.plugins.osgidoc
 
-import java.util.regex.Matcher;
+import java.util.regex.Matcher
+import java.util.List
+import java.util.ArrayList
 
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.FilenameUtils
@@ -43,7 +45,7 @@ class OSGiDocTaskConvention {
 	private final Logger logger
 	private File bndFile
 	private final Configuration ftlConfig = new Configuration(Configuration.VERSION_2_3_22)
-	private final ClassTemplateLoader classpathTemplateLoader = new ClassTemplateLoader(getClass(), "/templates")
+	private final ClassTemplateLoader classpathTemplateLoader = new ClassTemplateLoader(getClass(), OSGiDocPlugin.FTL_TEMPLATES_FOLDER)
 
 	def PLUGIN_DEP_REGX=/org.workspace7.gradle.plugins.osgidoc-([0-9]*.[0-9]*.[0-9]*)-(SNAPSHOT|latest).jar$/
 
@@ -173,9 +175,9 @@ class OSGiDocTaskConvention {
 
 			thisPluginJar.expand(pluginTmpDir)
 
-			File srcStylesheet = new File("${pluginTmpDir}/stylesheet.css")
+			File srcStylesheet = new File("${pluginTmpDir}/${OSGiDocPlugin.OSGi_DOC_STYLESHEET}")
 
-			File destStylesheet = new File("${docsDir}/stylesheet.css")
+			File destStylesheet = new File("${docsDir}/${OSGiDocPlugin.OSGi_DOC_STYLESHEET}")
 
 			//copy stylesheet
 			FileUtils.copyFile(srcStylesheet,destStylesheet)
@@ -253,6 +255,8 @@ class OSGiDocTaskConvention {
 					domain.getParameters(Constants.SERVICE_COMPONENT);
 
 			def scrList = []
+			
+			List<SCR> scrs = new ArrayList<SCR>()
 
 			parameters.keySet().each { serviceCompXml ->
 
@@ -325,21 +329,29 @@ class OSGiDocTaskConvention {
 					references:references,
 					service:scrService,
 					xmlns:component.@xmlns,properties:scrProps)
-
-					//Generate the SCR file
-					templateModel.put("scr",scr)
-
-					def scrTpl = ftlConfig.getTemplate("scr_doc.ftl")
-
-					File outFile = new File(docsDir,"scr_${name}.html")
-
-					FileWriter outFileWriter = new FileWriter(outFile)
-
-					scrTpl.process(templateModel,outFileWriter)
+					
+					scrs.add(scr)
+				
 				}
 			}
 
 			templateModel.put("scrList",scrList)
+			
+			//Generate the SCR file
+			scrs.each { scr ->
+				
+				def name = scr.name
+				
+				templateModel.put("scr",scr)
+			
+				def scrTpl = ftlConfig.getTemplate("scr_doc.ftl")
+				
+				File outFile = new File(docsDir,"scr_${name}.html")
+	
+				FileWriter outFileWriter = new FileWriter(outFile)
+	
+				scrTpl.process(templateModel,outFileWriter)
+			}
 
 			templates.each { outfileName,template ->
 

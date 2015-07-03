@@ -15,24 +15,25 @@
 *
 -->
 <#include 'header.ftl'/>
-<body>
 <#include 'navbar.ftl'/>
-<#include 'bundle_info.ftl'/>    <#-- Temp PlaceHolder -->
-<p>&nbsp;
-<table border="1" width="100%" cellpadding="3" cellspacing="0"
-       SUMMARY="">
-    <tr bgcolor="#CCCCFF" class="TableHeadingColor">
-        <th align="left" colspan="2"><font size="+2"> <b>IMPORTS</b></font></th>
+<#include 'bundle_info.ftl'/>   
+<table>
+    <tr class="tableHeading">
+        <th colspan="2">IMPORTS</th>
     </tr>
-    <tr bgcolor="#CCCCFF" class="TableSubHeadingColor">
-        <th align="left"><font size="+1"> <b>Package</b></font></th>
-        <th align="left"><font size="+1"> <b>Version</b></font></th>
+    <tr class="tableSubHeading">
+        <th>Package</th>
+        <th>Version</th>
     </tr>
 <#if imports??>
     <#assign pkgNames = imports?keys>
     <#list pkgNames as pkgName>
-        <tr bgcolor="white" class="TableRowColor">
-            <td width="20%"><b>${pkgName}</b></td>
+            <#if pkgName_index % 2 = 0 >
+       		   <tr class="tableRow">
+		     <#else>
+			    <tr class="tableRow alt">
+		    </#if>
+			<td>${pkgName}</td>
             <#assign pkgVersions = imports[pkgName]>
 			<#if pkgVersions?has_content>
           	  <#list pkgVersions as pkgVersion>
@@ -45,6 +46,4 @@
     </#list>
 </#if>
 </table>
-</p>
-</body>
 <#include 'footer.ftl'/>
