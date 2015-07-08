@@ -17,11 +17,12 @@
 package org.workspace7.osgidoc.webconsole;
 
 import java.io.IOException;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Hashtable;
 import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,9 +30,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.osgi.framework.Bundle;
+import org.osgi.service.component.annotations.Component;
 import org.osgi.service.http.HttpContext;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.osgi.service.log.LogService;
 
 /**
  * The ResourceProvider class that helps in computing the resource URLS when the
@@ -39,20 +40,18 @@ import org.slf4j.LoggerFactory;
  * 
  * @author Kamesh Sampath
  */
+@Component(
+				service = HttpContext.class,
+				property = "provider.id=osgidocresourceprovider")
 public class OSGiDocResourceProvider implements HttpContext {
-
-	private final Logger logger =
-		LoggerFactory.getLogger(OSGiDocResourceProvider.class);
 
 	private Hashtable<String, Bundle> osgiDocBundles =
 		new Hashtable<String, Bundle>();
 
 	private OSGiDocWebConsolePlugin plugin;
 
-	public OSGiDocResourceProvider(
-		OSGiDocWebConsolePlugin plugin) {
-		this.plugin = plugin;
-	}
+	private static final Pattern NATIVE_RES_PATTERN =
+		Pattern.compile("^/osgidoc(?<nativePath>/(css|js)/.*)");
 
 	@Override
 	public boolean handleSecurity(
@@ -62,24 +61,54 @@ public class OSGiDocResourceProvider implements HttpContext {
 		return true;
 	}
 
+	public OSGiDocWebConsolePlugin getPlugin() {
+		return plugin;
+	}
+
+	public void setPlugin(OSGiDocWebConsolePlugin plugin) {
+		this.plugin = plugin;
+	}
+
 	@Override
 	public URL getResource(String name) {
 
-		logger.debug("Resource name:" + name);
+		this.plugin.log(LogService.LOG_DEBUG, "Resource name:" + name);
+
+		Matcher matcher = NATIVE_RES_PATTERN.matcher(name);
 
 		try {
 			if ("/osgidoc".equals(name)) {
+				this.plugin.log("Plugin native path:" + name);
+				return plugin.getServletContext().getResource(name);
+			}
+			else if (matcher.matches()) {
 
-				plugin.getServletContext().getResource(name);
+				this.plugin.log("Plugin native resource:" + name);
+
+				String nativeResourcePath = matcher.group("nativePath");
+
+				this.plugin.log(
+					"Plugin native resource CSS Path:" + nativeResourcePath);
+
+				URL nativeResourceURL = null;
+
+				try {
+					nativeResourceURL =
+						getClass().getResource(nativeResourcePath);
+				}
+				catch (Exception e) {
+					this.plugin.log(LogService.LOG_ERROR,
+						"Plugin resource:" + name + " not found", e);
+				}
+
+				return nativeResourceURL;
 
 			}
 			else if (name.endsWith(".css")) {
 
 				String cssFileName = FilenameUtils.getName(name);
 
-				logger.debug("CSS Filename:{}", new Object[] {
-					cssFileName
-				});
+				System.out.printf("CSS Filename:%s", cssFileName);
 
 				return getResourceFromBundle(cssFileName);
 
@@ -89,9 +118,8 @@ public class OSGiDocResourceProvider implements HttpContext {
 
 				String imageFileName = FilenameUtils.getName(name);
 
-				logger.debug("Image Filename:{}", new Object[] {
-					imageFileName
-				});
+				System.out.printf("Image Filename:%s",
+					imageFileName);
 
 				return getResourceFromBundle("resources/" + imageFileName);
 
@@ -100,9 +128,8 @@ public class OSGiDocResourceProvider implements HttpContext {
 
 				String bundleResourceFileName = FilenameUtils.getName(name);
 
-				logger.debug("Resource :{}", new Object[] {
-					bundleResourceFileName
-				});
+				System.out.printf("Resource :%s",
+					bundleResourceFileName);
 
 				if (bundleResourceFileName != null) {
 					return getResourceFromBundle(bundleResourceFileName);
@@ -110,9 +137,8 @@ public class OSGiDocResourceProvider implements HttpContext {
 			}
 		}
 		catch (MalformedURLException e) {
-			logger.error("Unable to build URL for :{}", new Object[] {
-				name
-			});
+			this.plugin.log(LogService.LOG_ERROR,
+				"Plugin resource:" + name + " not found", e);
 		}
 
 		return null;
@@ -122,9 +148,7 @@ public class OSGiDocResourceProvider implements HttpContext {
 	@Override
 	public String getMimeType(String name) {
 
-		logger.debug("Getting Mime of {}", new Object[] {
-			name
-		});
+		System.out.printf("Getting Mime of %s}", name);
 
 		if (name != null) {
 
@@ -216,10 +240,9 @@ public class OSGiDocResourceProvider implements HttpContext {
 				resourceFileName));
 
 			if (bundleResource != null) {
-				logger.debug(
-					"Resource:{} fetched from bundle:{}", new Object[] {
-						resourceFileName, bundle.getSymbolicName()
-				});
+				System.out.printf(
+					"Resource:%s fetched from bundle:%s",
+					resourceFileName, bundle.getSymbolicName());
 				return bundleResource;
 			}
 		}

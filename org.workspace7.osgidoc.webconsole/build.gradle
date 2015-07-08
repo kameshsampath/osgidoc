@@ -1,0 +1,9 @@
+apply plugin: 'eclipse'
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+ 	compile 'com.github.spullara.mustache.java:compiler:0.8.17'
+}

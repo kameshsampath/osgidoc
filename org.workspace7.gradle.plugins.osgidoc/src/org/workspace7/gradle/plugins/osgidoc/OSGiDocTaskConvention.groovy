@@ -133,13 +133,12 @@ class OSGiDocTaskConvention {
 				logger.debug "OSGI Includes: ${includes}"
 
 				builder.setProperty(Constants.INCLUDERESOURCE, includes)
-
-				Jar bundleJar = builder.build()
-				bundleJar.updateModified(System.currentTimeMillis(), 'Added OSGI-DOC to the bundle')
-
+									
 				//TODO Log errors
 
 				try {
+					Jar bundleJar = builder.build()
+					bundleJar.updateModified(System.currentTimeMillis(), 'Added OSGI-DOC to the bundle')
 					bundleJar.write(archivePath)
 				} catch (Exception) {
 					task.archivePath.delete()

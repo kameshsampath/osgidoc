@@ -1,0 +1,28 @@
+<div id="osgidoc-frame-nav" class="NavBarCell1">
+	<ul id="docBundles">
+		{{#docBundles}}
+ 			<li><a href="#" data-osgidoc-link='{{toString}}_index.html'>{{toString}}</a></li>
+		{{/docBundles}}	
+	</ul>
+</div>
+
+<div id="osgidoc-frame-content">
+	<object data="" height="700px" width="730px"></object>
+</div>
+
+<script>
+	$(function(){
+		
+		$('#docBundles a').click(function(){
+			var toLink = $(this).attr('data-osgidoc-link')
+			if(toLink){
+				
+				toLink = '/system/console/osgidoc/'+toLink;
+								
+				$("#osgidoc-frame-content object").attr('data',toLink);
+			}
+		});
+	});
+</script>
+
+</div>
