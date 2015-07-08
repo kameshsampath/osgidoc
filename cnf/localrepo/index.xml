@@ -1,5 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1435837698060" name="Local" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1436332521644" name="Local" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.google.guava"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="a896857d07845d38c7dc5bbc0457b6d9b0f62ecffda010e5e9ec12d561f676d3"/>
+      <attribute name="url" value="com.google.guava/com.google.guava-16.0.1.jar"/>
+      <attribute name="size" type="Long" value="2228009"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.net"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="javax.annotation,com.google.common.base,com.google.common.hash,com.google.common.io,com.google.common.primitives,com.google.common.collect,com.google.common.escape"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.html"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="com.google.common.escape,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.collect"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="com.google.common.base,javax.annotation,com.google.common.primitives,com.google.common.math"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.primitives"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="javax.annotation,com.google.common.base,sun.misc"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.base"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.escape"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="com.google.common.base,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.cache"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="com.google.common.collect,com.google.common.util.concurrent,javax.annotation,com.google.common.base,com.google.common.primitives,sun.misc"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.eventbus"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="com.google.common.collect,com.google.common.cache,javax.annotation,com.google.common.base,com.google.common.util.concurrent,com.google.common.reflect"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.util.concurrent"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="com.google.common.base,javax.annotation,com.google.common.collect,com.google.common.primitives,com.google.common.math"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.hash"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="com.google.common.primitives,com.google.common.base,javax.annotation,com.google.common.math"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.io"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="javax.annotation,com.google.common.base,com.google.common.math,com.google.common.hash,com.google.common.collect,com.google.common.primitives"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.xml"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="com.google.common.escape,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.reflect"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="javax.annotation,com.google.common.base,com.google.common.collect,com.google.common.primitives"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.math"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+      <directive name="uses" value="com.google.common.base,com.google.common.primitives,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.google.common.annotations"/>
+      <attribute name="version" type="Version" value="16.0.1"/>
+      <attribute name="bundle-symbolic-name" value="com.google.guava"/>
+      <attribute name="bundle-version" type="Version" value="16.0.1"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.annotation)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.inject)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=sun.misc)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+  </resource>
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="org.apache.felix.configadmin"/>
@@ -1462,6 +1599,764 @@
     </requirement>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.startlevel)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="org.jruby.jruby"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="2951427794e242d201ba663cf47487bf4edd4697432e72b35fb0663aec8f754b"/>
+      <attribute name="url" value="org.jruby.jruby/org.jruby.jruby-1.6.7.jar"/>
+      <attribute name="size" type="Long" value="10017415"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ast.visitor"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.ast"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.callsite"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.runtime,org.jruby,org.jruby.internal.runtime.methods,org.jruby.javasupport.util,org.jruby.exceptions"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.embed"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.ast,org.jruby.javasupport,org.jruby.runtime.scope,org.jruby.util,org.jruby,org.jruby.runtime,org.jruby.embed.internal,org.jruby.runtime.builtin,org.jruby.embed.util,org.jruby.embed.io,org.jruby.util.io,org.jruby.internal.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.posix"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.ext.posix.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.util.func"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.cext"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.util,org.jruby.runtime.builtin,org.jruby.threading,org.jruby.util.io,org.jruby.runtime,org.jruby,org.jruby.internal.runtime.methods,org.jruby.javasupport.util,org.jruby.internal.runtime,org.jruby.exceptions,org.jruby.runtime.scope,org.jruby.parser"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.org.objectweb.asm.tree"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.org.objectweb.asm"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.org.objectweb.asm.tree.analysis"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.org.objectweb.asm,org.jruby.org.objectweb.asm.tree"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler.ir.targets"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.compiler.ir,org.jruby.org.objectweb.asm,org.jruby.org.objectweb.asm.commons,org.jruby.compiler.ir.operands,org.jruby.util,org.jruby.compiler.ir.instructions,org.jruby.org.objectweb.asm.util,org.jruby"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.demo"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby,org.jruby.runtime.builtin,javax.swing.text,javax.swing.border,org.jruby.runtime.load,org.jruby.runtime,javax.swing,org.jruby.internal.runtime,org.jruby.util,org.jruby.runtime.callback,org.jruby.ext,javax.swing.plaf.basic,org.jruby.exceptions"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.embed.bsf"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.javasupport,org.apache.bsf.util,org.jruby,org.jruby.runtime,org.jruby.embed.internal,org.jruby.embed.util,org.jruby.embed,org.jruby.exceptions,org.apache.bsf,org.jruby.embed.variable,org.jruby.internal.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler.ir"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.compiler.ir.operands,org.jruby.ast,org.jruby.compiler.ir.instructions,org.jruby.compiler,org.jruby.compiler.ir.compiler_pass.opts,org.jruby.util,org.jruby.compiler.ir.compiler_pass,org.jruby,org.jruby.lexer.yacc,org.jruby.runtime,org.jruby.parser,org.jgrapht,org.jruby.compiler.ir.representations"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.exceptions"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby,org.jruby.runtime.builtin,org.jruby.javasupport.util,org.jruby.runtime.backtrace,org.jruby.runtime,org.jruby.internal.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.embed.osgi.internal"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.embed.osgi.utils,org.osgi.framework,org.jruby.embed,org.jruby.runtime.load,org.jruby.util,org.jruby,org.jruby.platform"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.lexer"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.util.collections"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.java.codegen"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.org.objectweb.asm,org.jruby.runtime.builtin,org.jruby.ast.executable,org.jruby.javasupport,org.jruby.util,org.jruby.runtime.callsite,org.jruby.internal.runtime.methods,org.jruby.compiler.impl,org.jruby.compiler.util,org.jruby,org.jruby.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ast.util"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.util,org.jruby,org.jruby.exceptions,org.jruby.ast,org.jruby.lexer.yacc"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler.ir.operands"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.interpreter,org.jruby.runtime.builtin,org.jruby.compiler.ir,org.jruby.compiler.ir.representations,org.jruby,org.jruby.runtime,org.jruby.parser,org.jruby.internal.runtime,org.jruby.internal.runtime.methods,org.jruby.runtime.callsite,org.jruby.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.demo.ext"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby,org.jruby.runtime,org.jruby.internal.runtime.methods,org.jruby.anno"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.common"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby,org.jruby.lexer.yacc,org.jruby.runtime.builtin,org.jruby.runtime,org.jruby.internal.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.util"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.runtime.load,org.jruby,org.jruby.exceptions,org.jruby.org.objectweb.asm,org.jruby.platform,org.jruby.ext.posix,org.jruby.runtime,org.jruby.ast.executable,org.jruby.javasupport.util,org.jruby.runtime.encoding,org.jruby.ext.posix.util,org.jruby.util.io,org.jruby.libraries,org.jruby.common,sun.misc,org.jruby.internal.runtime,org.jruby.runtime.marshal"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.embed.osgi"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.embed.osgi.utils,org.osgi.framework,org.jruby.embed,org.jruby,org.jruby.embed.osgi.internal"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.posix.util"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.ext.posix"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.ast,org.jruby.ast.types,org.jruby.anno,org.jruby.lexer.yacc,org.jruby,org.jruby.exceptions,org.jruby.runtime.backtrace,org.jruby.parser,org.jruby.common,org.jruby.runtime.callback,org.jruby.util,org.jruby.ast.util,org.jruby.javasupport.util,org.jruby.runtime.scope,org.jruby.evaluator,org.jruby.runtime.assigner,org.jruby.compiler.ir,org.jruby.compiler.ir.representations,org.jruby.interpreter,org.jruby.internal.runtime.methods,org.jruby.runtime.callsite,org.jruby.runtime.marshal,org.jruby.ast.executable,org.jruby.ext.fiber,org.jruby.runtime.profile"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.util.unsafe"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="sun.misc,org.jruby.org.objectweb.asm,org.jruby.util,org.jruby.compiler.impl"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.embed.osgi.utils"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.osgi.framework"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.util.string"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler.impl"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.org.objectweb.asm,org.jruby.runtime.builtin,org.jruby.compiler,org.jruby.util,org.jruby.javasupport.util,org.jruby,org.jruby.runtime,org.jruby.parser,org.jruby.exceptions,org.jruby.ast,org.jruby.javasupport,org.jruby.internal.runtime.methods,org.jruby.ast.util,org.jruby.lexer.yacc,org.jruby.internal.runtime,org.jruby.ast.executable,org.jruby.runtime.encoding,org.jruby.anno,org.jruby.org.objectweb.asm.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.ffi"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.internal.runtime.methods,org.jruby,org.jruby.runtime,org.jruby.anno,org.jruby.util,org.jruby.exceptions,org.jruby.runtime.load,org.jruby.ext.ffi.io,org.jruby.util.io,org.jruby.javasupport"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.javasupport.util"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby,org.jruby.runtime.builtin,org.jruby.internal.runtime.methods,org.jruby.runtime,org.jruby.ast,org.jruby.ast.executable,org.jruby.javasupport,org.jruby.compiler,org.jruby.common,org.jruby.util,org.jruby.exceptions,org.jruby.evaluator,org.jruby.ast.util,org.jruby.lexer.yacc,org.jruby.util.unsafe,org.jruby.internal.runtime,org.jruby.parser"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.nkf"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.embed.internal"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.util,org.jruby.embed,org.jruby,org.jruby.runtime.builtin,org.jruby.embed.variable,org.jruby.runtime.scope,org.jruby.ast,org.jruby.ast.executable,org.jruby.runtime,org.jruby.exceptions,org.jruby.javasupport,org.jruby.javasupport.util,org.jruby.compiler,org.jruby.embed.util,org.jruby.embed.io,org.jruby.internal.runtime,org.jruby.parser"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ast"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.ast.visitor,org.jruby.javasupport.util,org.jruby,org.jruby.lexer.yacc,org.jruby.runtime,org.jruby.util,org.jruby.exceptions,org.jruby.ast.types,org.jruby.internal.runtime.methods,org.jruby.evaluator,org.jruby.parser,org.jruby.common,org.jruby.runtime.encoding,org.jruby.internal.runtime,org.jruby.compiler,org.jruby.ast.util,org.jruby.javasupport,org.jruby.util.unsafe"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.java.proxies"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby,org.jruby.runtime,org.jruby.javasupport,org.jruby.internal.runtime.methods,org.jruby.exceptions,org.jruby.anno,org.jruby.javasupport.util,org.jruby.util,org.jruby.java.invokers"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.org.objectweb.asm.util"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.org.objectweb.asm,org.jruby.org.objectweb.asm.tree.analysis,org.jruby.org.objectweb.asm.tree,org.jruby.org.objectweb.asm.signature"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.ffi.io"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.ext.posix,org.jruby,org.jruby.runtime.builtin,org.jruby.runtime,org.jruby.internal.runtime.methods,org.jruby.util.io,org.jruby.anno,org.jruby.exceptions"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.mathn"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.load,org.jruby"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.internal.runtime.methods,org.jruby.runtime,org.jruby,org.jruby.exceptions,org.jruby.anno,org.jruby.runtime.load,org.jruby.common,org.jruby.ext.posix,org.jruby.util.io,org.jruby.util,org.jruby.threading,org.jruby.javasupport.util,org.jruby.internal.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.builtin"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby,org.jruby.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ast.java_signature"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.callback"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.runtime,org.jruby.org.objectweb.asm,org.jruby.util,org.jruby,org.jruby.javasupport,org.jruby.exceptions,org.jruby.internal.runtime.methods,org.jruby.compiler.impl,org.jruby.javasupport.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.load"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby,org.jruby.exceptions,org.jruby.cext,org.jruby.org.objectweb.asm,org.jruby.runtime.builtin,org.jruby.ast.executable,org.jruby.util,org.jruby.javasupport,org.jruby.platform,org.jruby.runtime,org.jruby.common"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.javasupport.bsf"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.apache.bsf,javax.swing,org.jruby.runtime.builtin,org.jruby.javasupport,org.jruby,org.jruby.runtime,org.apache.bsf.util,org.jruby.internal.runtime,org.jruby.exceptions"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ant"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.embed"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.org.objectweb.asm"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.javasupport"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.util,org.jruby,org.jruby.internal.runtime.methods,org.jruby.runtime,org.jruby.exceptions,org.jruby.java.dispatch,org.jruby.javasupport.proxy,org.jruby.javasupport.util,org.jruby.anno,org.jruby.java.invokers,org.jruby.java.proxies,org.jruby.common,org.jruby.runtime.load,org.jruby.java.addons,org.jruby.java.codegen,org.jruby.runtime.callback,org.jruby.ast,org.jruby.compiler.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler.ir.compiler_pass.opts"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.compiler.ir.compiler_pass,org.jruby.compiler.ir,org.jruby.compiler.ir.representations,org.jruby.compiler.ir.dataflow.analyses,org.jruby.compiler.ir.dataflow,org.jruby.compiler.ir.operands,org.jruby.compiler.ir.instructions"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.fiber"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.runtime,org.jruby,org.jruby.exceptions,org.jruby.anno,org.jruby.internal.runtime,org.jruby.runtime.load,org.jruby.internal.runtime.methods"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler.ir.dataflow.analyses"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.compiler.ir,org.jruby.compiler.ir.representations,org.jruby.compiler.ir.operands,org.jruby.compiler.ir.instructions,org.jruby.compiler.ir.dataflow"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.gen"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.internal.runtime.methods,org.jruby.anno,org.jruby.runtime,org.jruby,org.jruby.compiler,org.jruby.demo.ext,org.jruby.ext,org.jruby.ext.coverage,org.jruby.ext.ffi,org.jruby.ext.ffi.io,org.jruby.ext.ffi.jffi,org.jruby.ext.fiber,org.jruby.ext.jruby,org.jruby.ext.psych,org.jruby.ext.socket,org.jruby.ext.zlib,org.jruby.java.addons,org.jruby.java.proxies,org.jruby.javasupport,org.jruby.javasupport.proxy,org.jruby.libraries,org.jruby.util.io"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler.util"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.org.objectweb.asm,org.jruby.util,org.jruby,org.jruby.compiler.impl,org.jruby.compiler"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.management"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.compiler,org.jruby,javax.management,org.jruby.util,org.jruby.parser,org.jruby.runtime.builtin,org.jruby.runtime.backtrace,org.jruby.exceptions,org.jruby.runtime,org.jruby.internal.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.zlib"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.anno,org.jruby.runtime.builtin,org.jruby,org.jruby.runtime,org.jruby.internal.runtime.methods,org.jruby.util,org.jruby.exceptions,org.jruby.runtime.callback,org.jruby.javasupport.util,org.jruby.util.io,org.jruby.internal.runtime,org.jruby.runtime.encoding,org.jruby.common,org.jruby.runtime.load"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.util.io"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby,org.jruby.util,org.jruby.ext.posix,org.jruby.platform,org.jruby.exceptions,org.jruby.runtime.builtin,org.jruby.runtime,org.jruby.internal.runtime.methods,org.jruby.javasupport,org.jruby.anno,org.jruby.common"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.lexer.yacc"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.util,org.jruby.ast,org.jruby.runtime,org.jruby.parser,org.jruby.common,org.jruby.runtime.encoding"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.jruby"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.load,org.jruby,org.jruby.runtime.builtin,org.jruby.internal.runtime.methods,org.jruby.runtime,org.jruby.util,org.jruby.anno,org.jruby.exceptions"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.threading"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.invokedynamic"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime,org.jruby.org.objectweb.asm,org.jruby.runtime.builtin,org.jruby.ast.executable,org.jruby.util,org.jruby.runtime.callsite,org.jruby.internal.runtime.methods,org.jruby.exceptions,org.jruby.compiler.impl,org.jruby.javasupport.util,org.jruby"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.assigner"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.ast.util,org.jruby.runtime,org.jruby,org.jruby.ast,org.jruby.javasupport.util,org.jruby.common"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.profile"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.internal.runtime.methods,org.jruby.util.collections,org.jruby,org.jruby.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.coverage"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.runtime,org.jruby,org.jruby.runtime.load,org.jruby.internal.runtime.methods,org.jruby.anno,org.jruby.exceptions"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.java.dispatch"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.javasupport,org.jruby.util,org.jruby.common,org.jruby.java.proxies,org.jruby.runtime,org.jruby,org.jruby.javasupport.proxy,org.jruby.exceptions"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.internal.runtime.methods"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby,org.jruby.runtime,org.jruby.parser,org.jruby.anno,org.jruby.lexer.yacc,org.jruby.ast,org.jruby.ast.executable,org.jruby.compiler,org.jruby.org.objectweb.asm,org.jruby.util,org.jruby.exceptions,org.jruby.runtime.callback,org.jgrapht,org.jruby.compiler.ir,org.jruby.compiler.ir.representations,org.jruby.interpreter,org.jruby.evaluator,org.jruby.compiler.impl"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.marshal"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby,org.jruby.util,org.jruby.internal.runtime.methods,org.jruby.exceptions,org.jruby.runtime.encoding,org.jruby.runtime,org.jruby.javasupport.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler.ir.instructions"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.compiler.ir,org.jruby.compiler.ir.representations,org.jruby.compiler.ir.operands,org.jruby.runtime.builtin,org.jruby,org.jruby.interpreter,org.jruby.parser,org.jruby.runtime,org.jruby.internal.runtime.methods,org.jruby.exceptions,org.jruby.javasupport.util,org.jruby.internal.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.internal.runtime"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby,org.jruby.runtime,org.jruby.runtime.builtin,org.jruby.common,org.jruby.exceptions,org.jruby.util,org.jruby.runtime.profile"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.component"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.embed.util"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.embed.internal,org.jruby.util,org.jruby.embed,org.jruby"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.libraries"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.load,org.jruby,org.jruby.runtime.builtin,org.jruby.internal.runtime.methods,org.jruby.runtime,org.jruby.util.io,org.jruby.anno,org.jruby.exceptions,org.jruby.ext,org.jruby.util,org.jruby.javasupport.util,org.jruby.ext.posix.util,org.jruby.internal.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.java.invokers"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.javasupport,org.jruby.java.proxies,org.jruby.runtime,org.jruby,org.jruby.internal.runtime.methods,org.jruby.exceptions,org.jruby.java.dispatch"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler.ir.compiler_pass"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.compiler.ir,org.jruby.compiler.ir.representations,org.jruby.compiler.ir.dataflow.analyses,org.jgrapht,org.jruby.compiler.ir.operands,org.jruby.compiler.ir.instructions,org.jruby.compiler.ir.dataflow"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ast.executable"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.util,org.jruby.internal.runtime.methods,org.jruby,org.jruby.runtime,org.jruby.parser,org.jruby.common,org.jruby.runtime.callsite,org.jruby.javasupport.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.ast,org.jruby,org.jruby.lexer.yacc,org.jruby.util,org.jruby.internal.runtime.methods,org.jruby.runtime.callsite,org.jruby.exceptions,org.jruby.javasupport.util,org.jruby.runtime,org.jruby.parser,org.jruby.ast.types,org.jruby.compiler.impl,org.jruby.runtime.builtin,org.jruby.ast.executable,org.jruby.ast.util,org.jruby.org.objectweb.asm,org.jruby.org.objectweb.asm.util,org.jruby.common,org.jruby.management"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler.ir.representations"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.compiler.ir.operands,org.jruby.compiler.ir.instructions,org.jgrapht.graph,org.jgrapht,org.jruby.compiler.ir,org.jruby.compiler.ir.dataflow"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.encoding"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.util,org.jruby,org.jruby.runtime.builtin,org.jruby.exceptions"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.embed.io"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.interpreter"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.compiler.ir,org.jruby.ast,org.jruby.runtime.builtin,org.jruby.internal.runtime.methods,org.jruby.compiler.ir.representations,org.jruby.compiler.ir.instructions,org.jruby.exceptions,org.jruby.javasupport.util,org.jruby.compiler.ir.operands,org.jruby.runtime,org.jruby,org.jruby.parser,org.jruby.runtime.scope"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.platform"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.anno"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="com.sun.mirror.type,org.jruby.util,com.sun.mirror.declaration,com.sun.mirror.util,org.jruby.runtime,org.jruby,com.sun.mirror.apt,org.jruby.internal.runtime.methods,org.jruby.runtime.builtin,org.jruby.compiler"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.evaluator"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.ast,org.jruby.runtime.builtin,org.jruby.common,org.jruby.util,org.jruby.exceptions,org.jruby.javasupport.util,org.jruby.ast.util,org.jruby,org.jruby.runtime,org.jruby.lexer.yacc,org.jruby.parser"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.embed.variable"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.javasupport,org.jruby,org.jruby.runtime,org.jruby.parser,org.jruby.embed.internal,org.jruby.internal.runtime,org.jruby.runtime.scope,org.jruby.embed"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.embed.jsr223"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="javax.script,org.jruby.runtime.builtin,org.jruby.javasupport,org.jruby.embed,org.jruby,org.jruby.embed.util,org.jruby.embed.internal,org.jruby.embed.io,org.jruby.embed.variable,org.jruby.util.io,org.jruby.runtime,org.jruby.internal.runtime"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.org.objectweb.asm.signature"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.compiler.ir.dataflow"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.compiler.ir.operands,org.jruby.compiler.ir.dataflow.analyses,org.jruby.compiler.ir.representations,org.jruby.compiler.ir.instructions"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.environment"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.ffi.jffi"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.util,org.jruby.ext.ffi,org.jruby,org.jruby.exceptions,org.jruby.runtime.builtin,org.jruby.runtime,org.jruby.internal.runtime.methods,org.jruby.anno"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.scope"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.common,org.jruby.runtime,org.jruby,org.jruby.parser,org.jruby.javasupport.util,org.jruby.compiler.ir"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.java.addons"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.internal.runtime.methods,org.jruby,org.jruby.runtime,org.jruby.javasupport,org.jruby.anno,org.jruby.util,org.jruby.exceptions,org.jruby.util.io,org.jruby.java.proxies,org.jruby.javasupport.util,org.jruby.internal.runtime,org.jruby.util.unsafe"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.org.objectweb.asm.commons"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.org.objectweb.asm,org.jruby.org.objectweb.asm.tree,org.jruby.org.objectweb.asm.signature"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.psych"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby,org.jruby.runtime,org.jruby.internal.runtime.methods,org.jruby.util,org.jruby.anno,org.jruby.exceptions,org.jruby.runtime.load,org.jruby.javasupport.util,org.jruby.util.unsafe"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ext.socket"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby,org.jruby.runtime,org.jruby.internal.runtime.methods,org.jruby.util,org.jruby.anno,org.jruby.exceptions,org.jruby.util.io,org.jruby.platform,org.jruby.javasupport.util,org.jruby.ext.posix.util,org.jruby.runtime.load"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.runtime.backtrace"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.util,org.jruby,org.jruby.lexer.yacc,org.jruby.evaluator,org.jruby.interpreter,org.jruby.runtime,org.jruby.runtime.builtin"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.ast.types"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime,org.jruby.runtime.builtin,org.jruby"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.util,org.jruby.internal.runtime.methods,org.jruby.javasupport.util,org.jruby.runtime,org.jruby.exceptions,javax.swing.text,org.jruby.demo,javax.swing,org.jruby.javasupport,org.jruby.anno,org.jruby.ast,org.jruby.runtime.backtrace,org.jruby.platform,org.jruby.runtime.load,org.jruby.ast.executable,org.jruby.compiler,org.jruby.util.collections,org.jruby.ext.posix,org.jruby.runtime.scope,org.jruby.compiler.impl,org.jruby.util.func,org.jruby.runtime.encoding,org.jruby.management,org.jruby.ext,org.jruby.util.io,org.jruby.interpreter,org.jruby.lexer.yacc,org.jruby.internal.runtime,org.jruby.threading,org.jruby.common,org.jruby.runtime.profile,org.jruby.evaluator,org.jruby.ext.coverage,org.jruby.util.unsafe,org.jruby.parser,org.jruby.ext.posix.util,org.jruby.runtime.marshal,org.jruby.cext,org.jruby.java.addons,org.jruby.runtime.component,org.jruby.org.objectweb.asm,org.jruby.runtime.callsite,org.jruby.java.codegen,org.jruby.java.proxies,org.jruby.embed.util,org.jruby.org.objectweb.asm.util,org.jruby.ext.fiber,org.jruby.ast.types,org.jruby.ext.jruby,org.jruby.ast.util,org.jruby.runtime.callback,org.jruby.ext.nkf,org.jruby.util.string"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.javasupport.proxy"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.runtime.builtin,org.jruby.internal.runtime.methods,org.jruby.runtime,org.jruby,org.jruby.javasupport,org.jruby.anno,org.jruby.exceptions,org.jruby.util,org.jruby.org.objectweb.asm,org.jruby.org.objectweb.asm.commons,org.jruby.javasupport.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.jruby.parser"/>
+      <attribute name="version" type="Version" value="1.6.7"/>
+      <attribute name="bundle-symbolic-name" value="org.jruby.jruby"/>
+      <attribute name="bundle-version" type="Version" value="1.6.7"/>
+      <directive name="uses" value="org.jruby.ast,org.jruby.lexer.yacc,org.jruby.common,org.jruby.ast.types,org.jruby.util,org.jruby.lexer,org.jruby.ast.java_signature,org.jruby.runtime.builtin,org.jruby.exceptions,org.jruby.runtime.load,org.jruby,org.jruby.runtime,org.jruby.runtime.encoding,org.jruby.runtime.scope"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=com.kenai.jnr.x86asm)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=com.sun.mirror.apt)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=com.sun.mirror.declaration)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=com.sun.mirror.type)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=com.sun.mirror.util)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.script)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.swing)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.swing.border)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.swing.plaf.basic)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.swing.text)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.apache.bsf)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.apache.bsf.util)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.jgrapht)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.jgrapht.graph)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.osgi.framework)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=sun.misc)"/>
+      <directive name="resolution" value="optional"/>
     </requirement>
   </resource>
 </repository>
