@@ -1,6 +1,6 @@
 # OSGiDoc(WIP) #
 
-OSGiDoc is documentation utility that helps generating a _html_ based documentation for OSGi bundles. This serves as first step words building a formal RFP to the OSGi Alliance on defining the documentation as part of the OSGi specification.
+OSGiDoc is documentation utility that helps generating a _html_ based documentation for OSGi bundles.
 
 ### What is this repository for? ###
 
