@@ -1,8 +1,5 @@
 bin
 build
-.project
-.classpath
-.settings
 classes
 *.class
 /.gradle/
