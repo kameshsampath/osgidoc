@@ -5,16 +5,12 @@
  */
 
 import aQute.bnd.build.Workspace
+import aQute.bnd.osgi.Constants
 
 /* Add bnd gradle plugin as a script dependency */
 buildscript {
   repositories {
-    ivy {
-      url 'https://bndtools.ci.cloudbees.com/job/bnd.master/lastSuccessfulBuild/artifact/dist/bundles'
-      layout 'pattern', { artifact '[module]/[artifact]-[revision].[ext]' /* OSGi repo pattern */ }
-    }
     jcenter()
-    mavenLocal() //temporary, need to make it point to jcenter
   }
   dependencies {
     classpath bnd_plugin
@@ -27,7 +23,9 @@ buildscript {
 }
 
 /* Initialize the bnd workspace */
-def workspace = Workspace.getWorkspace(rootDir, bnd_cnf)
+Workspace.setDriver(Constants.BNDDRIVER_GRADLE)
+Workspace.addGestalt(Constants.GESTALT_BATCH, null)
+def workspace = new Workspace(rootDir, bnd_cnf)
 if (workspace == null) {
   throw new GradleException("Unable to load workspace ${rootDir}/${bnd_cnf}")
 }

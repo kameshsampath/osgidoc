@@ -16,7 +16,7 @@ buildscript {
 		classpath 'org.workspace7.gradle:org.workspace7.gradle.plugins.osgidoc:1.0.3-SNAPSHOT'
 	}
 }
-
+apply plugin: 'eclipse'
 apply plugin: 'org.workspace7.gradle.plugins.osgidoc'
 
 sourceCompatibility = 1.7
