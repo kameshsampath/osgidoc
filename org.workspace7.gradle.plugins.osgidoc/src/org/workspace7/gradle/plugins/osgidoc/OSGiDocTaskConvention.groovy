@@ -252,6 +252,7 @@ class OSGiDocTaskConvention {
 			//Service Components
 			Parameters parameters =
 					domain.getParameters(Constants.SERVICE_COMPONENT);
+					
 
 			def scrList = []
 			
@@ -277,11 +278,20 @@ class OSGiDocTaskConvention {
 
 					def scrProps = []
 
-					component.'property'.find { scrPropNode ->
-						ScrProperty scrProp = new ScrProperty(name:scrPropNode.@name,
-						type:scrPropNode.@type,value:scrPropNode.@value)
-						logger.debug "Service Properties:${scrProp}"
-						scrProps << scrProp
+					def propNodes = component.depthFirst().findAll{ it.name = 'property'} 
+					
+					propNodes.each { scrPropNode ->
+						
+						def propVal = scrPropNode.@value
+						
+						if(propVal){
+							
+							ScrProperty scrProp = new ScrProperty(name:scrPropNode.@name,
+							type:scrPropNode.@type,value:propVal)
+							logger.info "Service Properties:${scrProp}"
+							scrProps << scrProp
+							
+						}
 					}
 
 
