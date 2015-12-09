@@ -1,12 +1,12 @@
 /**
  * Copyright 2015-present Kamesh Sampath<kamesh.sampath@hotmail.com)
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *    http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,34 +15,13 @@
  */
 package org.workspace7.gradle.plugins.osgidoc
 
+import org.eclipse.xtend.lib.annotations.Data
+
 /**
- * 
  * @author Kamesh Sampath
- *
+ * 
  */
-class SCR {
-
-
-
-	String activate
-	String deactivate
-	String configurationPid
-	String configurationPolicy
-	boolean enabled
-	String factory
-	String name
-	boolean immediate
-	String implementation
-	List properties
-	String[] propertyResources	
-	ScrReference[] references
-	ScrService service
-	boolean serviceFactory
-	String xmlns
-
-	String toString() {
-		"SCR [ name:${name}, configurationPolicy:${configurationPolicy}," +
-				" immediate: ${immediate}, activate:${activate}, deactivate:${deactivate},"+
-				" configurationPid:${configurationPid}, configurationPolicy:${configurationPolicy} "
-	}
+@Data class OSGiDocPluginProperties {
+	String[] jars
+	String dir
 }

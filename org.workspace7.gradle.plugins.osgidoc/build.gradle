@@ -1,6 +1,17 @@
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "org.xtend:xtend-gradle-plugin:0.4.14"
+  }
+}
+
 apply plugin: 'eclipse'
-apply plugin: 'groovy'
 apply plugin: 'maven-publish'
+apply plugin: 'org.xtend.xtend'
 
 repositories {
 	maven { 
@@ -18,19 +29,17 @@ dependencies {
     compile 'org.gradle:gradle-native:2.0'
     compile 'org.codehaus.groovy:groovy-all:2.3.3'
 	compile 'commons-io:commons-io:2.4'
-	compile 'org.freemarker:freemarker:2.3.22'
+	compile 'com.github.httl:httl:1.0.11'
+	compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.8.+'
 	testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
 sourceSets {
-   
-    main {
-        groovy.srcDirs = java.srcDirs
-    }
-    
-    test {
-        groovy.srcDirs = java.srcDirs
-    }
+   main.xtendOutputDir = 'xtend-gen'
+   test.xtendOutputDir = 'test/xtend-gen'
 }
 
 publishing{

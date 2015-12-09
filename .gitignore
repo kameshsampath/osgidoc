@@ -6,3 +6,6 @@ classes
 /reports/
 /generated/
 generated
+**/.settings
+**/.classpath
+**/.project
