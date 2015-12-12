@@ -1,0 +1,72 @@
+<!--
+* Copyright 2015-present Kamesh Sampath<kamesh.sampath@hotmail.com)
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*    http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+-->
+
+<!--#macro($!header)-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OSGi Doc - ${bundleSymbolicName}</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="osgidoc.css"
+          title="Style">
+	<script type="text/javascript" src="resources/senna.js"></script>
+</head>
+<body data-senna>
+<!--#end-->
+
+<!--#macro($!nav)-->
+<div id="osgidoc-nav">
+    <div id="osgidoc-nav-default" class="NavBarCell1">
+      <ul>
+          <li><a href="${bundleSymbolicName}_index.html"><b>Overview</b></a></li>
+      </ul>
+    </div>
+</div>
+<!--#end-->
+
+<!--#macro($!main)-->
+	
+<!--#end-->
+
+<!--#macro($!footer)-->
+    </div>
+   </div>
+ </body>
+</html>
+<!--#end-->
+
+
+<!--#macro($!bundleInfo) -->
+<div id="osgidoc-content" data-senna-surface>
+  
+  <div id="osgidoc-content-default">
+	   <div id="osgidoc-content-header" class="osgidoc-header">
+           <p> 
+            <span class="osgidoc-title" if="bundleName">${bundleName}</span>
+		 	<span class="osgidoc-title" if="bundleSymbolicName">${bundleSymbolicName}</span>
+		    <span class="osgidoc-version" if="bundleVersion">${bundleVersion}</span>
+           </p>
+        </div>
+   		
+        <section id="osgidoc-content-header-desc" if="bundleDescription">
+		  <h1>Description:</h1>
+           <p  class="osgidoc-description"> 
+             <span>${bundleDescription}<span>
+           <p>        
+        </section>
+ <p>&nbsp;</p>
+<!--#end-->

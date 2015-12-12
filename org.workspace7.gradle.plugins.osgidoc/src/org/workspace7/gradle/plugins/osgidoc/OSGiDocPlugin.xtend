@@ -17,8 +17,6 @@ package org.workspace7.gradle.plugins.osgidoc
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.Task
-import org.gradle.api.tasks.bundling.Jar
 
 /**
  * @author Kamesh Sampath
@@ -27,27 +25,37 @@ import org.gradle.api.tasks.bundling.Jar
 class OSGiDocPlugin implements Plugin<Project> {
 
 	public static final String PLUGIN_ID = 'org.workspace7.gradle.plugins.osgidoc'
-	public static final String FTL_TEMPLATES_FOLDER = '/templates'
+	public static final String TEMPLATES_FOLDER = '/templates'
 	public static final String OSGi_DOC_STYLESHEET = 'osgidoc.css'
+	public static final String TASK_NAME = "osgidoc"
+	public static final String BND_PLUGIN_ID = "aQute.bnd.gradle.BndPlugin"
+	public static final String HTTL_CONFIG = "osgidoc-httl.properties"
 
-	override void apply(extension Project target) {
+	override void apply(extension Project p) {
 
 		logger.debug("RadheKrishna!")
 
-		extensions.create('osgidoc', OSGiDocPluginProperties)
+		// val extension Engine templateEngine = Engine.getEngine("/osgidoc-httl.properties")
+		// val extension Context templateContext = Context.context
+		extensions.create(TASK_NAME, OSGiDocExtension)
 
-		target => [
-			configureJar(task("jar"))
+		/* Apply bnd gradle plugin if its not done already */
+		if (!p.plugins.hasPlugin(BND_PLUGIN_ID)) {
+			try {
+				p.plugins.apply(BND_PLUGIN_ID)
+			} catch (Exception e) {
+				logger.error("Error applying Bnd Gradle Plugin", e)
+				throw e
+			}
+
+		}
+
+		TASK_NAME.task => [
+			/* make the jar build first */
+			val jarTask = tasks.getByName("jar")
+			jarTask.dependsOn
 		]
-	}
 
-	def configureJar(Task task) {
-		val extension Jar jarTask = task as Jar
-		val extension OSGiDocTaskConvention osgiDocPluginConvention = new OSGiDocTaskConvention(jarTask)
-		doLast([ s |
-			s.convention.plugins.put("osgidoc", osgiDocPluginConvention)
-			generateOsgiDoc()
-		])
 	}
 
 }

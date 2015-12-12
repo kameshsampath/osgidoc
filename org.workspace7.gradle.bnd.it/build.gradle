@@ -13,10 +13,10 @@ buildscript {
 	}
 	
 	dependencies {
-		classpath 'org.workspace7.gradle:org.workspace7.gradle.plugins.osgidoc:1.0.3-SNAPSHOT'
+		classpath 'org.workspace7.gradle:org.workspace7.gradle.plugins.osgidoc:2.0.0-SNAPSHOT'
 	}
 }
 apply plugin: 'eclipse'
-apply plugin: 'org.workspace7.gradle.plugins.osgidoc'
+//apply plugin: 'org.workspace7.gradle.plugins.osgidoc'
 
 sourceCompatibility = 1.7
