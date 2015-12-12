@@ -1,9 +1,0 @@
-.idea
-*.iml
-/generated/
-/test_bin/
-/bin_test/
-/bin/
-.project
-.settings
-.classpath

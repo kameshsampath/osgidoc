@@ -6,6 +6,8 @@ classes
 /reports/
 /generated/
 generated
+xtend-gen
+test/xtend-gen
 **/.settings
 **/.classpath
 **/.project
