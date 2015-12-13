@@ -1,10 +1,11 @@
 plugins {
+  id "groovy"
   id "eclipse"
   id 'maven-publish'
   /* enable this when xtend 2.9.1 is released */
   /*  id "org.xtext.xtend" version "1.0.0-RC1" */
   id "org.xtend.xtend" version "0.4.14"
-  id "groovy"
+  
 }
 
 dependencies {
@@ -28,7 +29,15 @@ targetCompatibility = 1.7
 
 sourceSets {
    
-   main.xtendOutputDir = 'xtend-gen'
+   main {
+   		
+   		groovy {
+   		
+   	    	srcDirs=['src']
+   	    }
+   	    
+   		xtendOutputDir = 'xtend-gen'
+   	}
    
    test {
    	  
@@ -58,9 +67,9 @@ dependencies {
 	testCompile 'com.google.guava:guava:19.0'
 	compile 'commons-io:commons-io:2.4'
 	compile 'com.github.httl:httl:1.0.11'
-	compile 'net.htmlparser.jericho:jericho-html:3.1'
-	compile 'biz.aQute.bnd:biz.aQute.bndlib:3.+'
+	compile 'net.htmlparser.jericho:jericho-html:3.1'	
 	compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.9+'
+	compile 'biz.aQute.bnd:biz.aQute.bnd.gradle:3+'
 	testCompile 'junit:junit:4.12'
 	testRuntime files(createClasspathManifest)
 }

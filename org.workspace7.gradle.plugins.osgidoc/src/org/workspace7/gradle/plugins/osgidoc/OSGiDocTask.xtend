@@ -36,7 +36,7 @@ import static org.workspace7.gradle.plugins.osgidoc.OSGiDocPlugin.*
  * @author Kamesh Sampath
  * 
  */
-class OSGiDocExtension extends DefaultTask {
+class OSGiDocTask extends DefaultTask {
 
 	val PLUGIN_DEP_REGX = "/org.workspace7.gradle.plugins.osgidoc-([0-9]*.[0-9]*.[0-9]*)-
 	(SNAPSHOT|latest). jar$/"
@@ -46,20 +46,17 @@ class OSGiDocExtension extends DefaultTask {
 
 	var File docsDir
 
-	val extension Project project
+	extension Project _project
 
 	var extension Engine templateEngine
 
 	var extension Context templateContext
 
-	new() {
-		templateContext = Context.getContext()
-		this.project = super.project
-	}
-
 	@TaskAction
 	def generateOsgiDoc() {
-
+		
+		_project = super.project
+		
 		logger.debug('''Project Dir:«projectDir»''')
 
 		if (!docsDir) {
@@ -81,6 +78,7 @@ class OSGiDocExtension extends DefaultTask {
 			val httlConfig = new File('''«pluginTmpDir»/«HTTL_CONFIG»''').absolutePath
 
 			this.templateEngine = Engine.getEngine(httlConfig)
+			templateContext = Context.getContext()
 
 			// Copy stylesheets
 			val srcStyleSheet = new File('''«pluginTmpDir»/«OSGi_DOC_STYLESHEET»''')
@@ -93,9 +91,9 @@ class OSGiDocExtension extends DefaultTask {
 			copyDirectory(srcResourcesDir, destResourcesDir)
 			deleteDirectory(pluginTmpDir)
 		}
-		
+
 		val bndJarFile = tasks.getByName("jar").outputs.file
-		
+
 		val extension bndJar = new Jar(bndJarFile)
 
 		bndJar.generateHTMLDocs

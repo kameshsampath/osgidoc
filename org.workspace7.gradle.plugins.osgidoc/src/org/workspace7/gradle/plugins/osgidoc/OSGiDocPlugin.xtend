@@ -17,44 +17,52 @@ package org.workspace7.gradle.plugins.osgidoc
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.Task
 
 /**
  * @author Kamesh Sampath
  * 
  */
-class OSGiDocPlugin implements Plugin<Project> {
+class OSGiDocPlugin implements Plugin<Project>
+{
 
-	public static final String PLUGIN_ID = 'org.workspace7.gradle.plugins.osgidoc'
-	public static final String TEMPLATES_FOLDER = '/templates'
-	public static final String OSGi_DOC_STYLESHEET = 'osgidoc.css'
-	public static final String TASK_NAME = "osgidoc"
-	public static final String BND_PLUGIN_ID = "aQute.bnd.gradle.BndPlugin"
-	public static final String HTTL_CONFIG = "osgidoc-httl.properties"
+	public static val PLUGIN_ID = 'org.workspace7.gradle.plugins.osgidoc'
+	public static val TEMPLATES_FOLDER = '/templates'
+	public static val OSGi_DOC_STYLESHEET = 'osgidoc.css'
+	public static val TASK_NAME = "osgidoc"
+	public static val TASK_DESCRIPTION = "Task that will generate OSGi" +
+		"Documentation"
+	public static val String BND_PLUGIN_ID = "biz.aQute.bnd.builder"
+	public static val String HTTL_CONFIG = "osgidoc-httl.properties"
 
-	override void apply(extension Project p) {
+	override void apply(extension Project target)
+	{
 
 		logger.debug("RadheKrishna!")
 
-		// val extension Engine templateEngine = Engine.getEngine("/osgidoc-httl.properties")
-		// val extension Context templateContext = Context.context
-		extensions.create(TASK_NAME, OSGiDocExtension)
-
 		/* Apply bnd gradle plugin if its not done already */
-		if (!p.plugins.hasPlugin(BND_PLUGIN_ID)) {
-			try {
-				p.plugins.apply(BND_PLUGIN_ID)
-			} catch (Exception e) {
-				logger.error("Error applying Bnd Gradle Plugin", e)
+		if(!plugins.hasPlugin(BND_PLUGIN_ID))
+		{
+			try
+			{
+				plugins.apply(BND_PLUGIN_ID)
+			}
+			catch(Exception e)
+			{
+				logger.error('''Error applying «BND_PLUGIN_ID»''', e)
 				throw e
 			}
 
 		}
 
-		TASK_NAME.task => [
-			/* make the jar build first */
-			val jarTask = tasks.getByName("jar")
-			jarTask.dependsOn
-		]
+		val taskOpts = newHashMap(
+			Task.TASK_NAME -> TASK_NAME,
+			Task.TASK_TYPE -> OSGiDocTask,
+			Task.TASK_DESCRIPTION -> TASK_DESCRIPTION,
+			Task.TASK_DEPENDS_ON -> #[':jar']
+		)
+
+		target.task(taskOpts, TASK_NAME)
 
 	}
 
