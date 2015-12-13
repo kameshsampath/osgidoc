@@ -20,7 +20,7 @@
 #project:               ${basedir}
 src:                    src,xtend-gen
 #bin:                   bin
-#testsrc:               test
+testsrc:                test/src,test/groovy,test/xtend-gen
 #testbin:               bin_test
 #test-reports:          test-reports
 #target-dir:            generated

@@ -1,8 +1,21 @@
 plugins {
   id "eclipse"
   id 'maven-publish'
-  id "org.xtext.xtend" version "1.0.0-RC1"
+  /* enable this when xtend 2.9.1 is released */
+  /*  id "org.xtext.xtend" version "1.0.0-RC1" */
+  id "org.xtend.xtend" version "0.4.14"
   id "groovy"
+}
+
+dependencies {
+	compile gradleApi()
+	compile localGroovy()
+    compile gradleApi()
+    testCompile gradleTestKit()
+	/* exclude grovy-all to avoid groovy load error*/
+	testCompile('org.spockframework:spock-core:1.0-groovy-2.4'){
+		exclude module: 'groovy-all'
+	}
 }
 
 repositories {
@@ -10,41 +23,47 @@ repositories {
   	mavenCentral()
 }
 
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
-/*task createClasspathManifest {
+sourceSets {
+   
+   main.xtendOutputDir = 'xtend-gen'
+   
+   test {
+   	  
+   	    xtendOutputDir = 'test/xtend-gen'
+   	    
+   	    groovy {
+   	    	srcDirs=['test/groovy']
+   	    }
+   	}
+}
+
+task createClasspathManifest {
 	def outputDir = file("$buildDir/$name")
-	input.files sourceSets.main.runtimeClasspath
+	
+	inputs.files sourceSets.main.runtimeClasspath
+	
 	outputs.dir outputDir
+	
 	doLast{
 		outputDir.mkdirs()
-		file("$outputDir/plugin-classpath.txt").text = sourceSets.main.runtimeClasspath.joint("\n")
+		file("$outputDir/plugin-classpath.txt").text = 
+		sourceSets.main.runtimeClasspath.join("\n")
 	}
-}*/
+}
 
 dependencies {
 	testCompile 'com.google.guava:guava:19.0'
-	compile gradleApi()
-	compile localGroovy()	
 	compile 'commons-io:commons-io:2.4'
 	compile 'com.github.httl:httl:1.0.11'
 	compile 'net.htmlparser.jericho:jericho-html:3.1'
 	compile 'biz.aQute.bnd:biz.aQute.bndlib:3.+'
 	compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.9+'
-	testCompile 'junit:junit:4.12'		
-	testCompile gradleTestKit()		
-	testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
-	//testRuntime files(createClasspathManifest)
+	testCompile 'junit:junit:4.12'
+	testRuntime files(createClasspathManifest)
 }
-
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
-
-sourceSets {
-   main.xtendOutputDir = 'xtend-gen'
-   test.xtendOutputDir = 'test/xtend-gen'
-}
-
-
 publishing{
 	
 	publications {

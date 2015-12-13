@@ -33,30 +33,47 @@ class OsgiDocPluginTest extends Specification {
 
 	@Rule TemporaryFolder testProjectDir = new TemporaryFolder()
 	File buildFile
+	List<File> pluginClasspath
 
 	def setup() {
-		buildFile = testProjectDir.newFile("build.file")
+		
+		buildFile = testProjectDir.newFile('build.gradle')
+
+		def pluginClasspathResource = getClass().classLoader.findResource("plugin-classpath.txt")
+		
+		if (pluginClasspathResource == null) {
+			throw new IllegalStateException("Did not find plugin classpath resource, run `testClasses` build task.")
+		}
+		
+		pluginClasspath = pluginClasspathResource.readLines().collect { new File(it) }
 	}
 
-	
+
+
 	def "osgidoc task generates HTML documentation for bundle"(){
 		given:
 		buildFile << """
+		plugins {
+			id 'org.workspace7.gradle.plugins.osgidoc'
+		}
+
 		task osgidoc {
 			doLast {
-				print 'HariBol'
-		    }
+				println 'Haribol!'
+			}
 		}
 		"""
 
 		when:
 		def result = GradleRunner.create()
+				.withDebug(true)
+				.withPluginClasspath(pluginClasspath)
 				.withProjectDir(testProjectDir.root)
 				.withArguments('osgidoc')
 				.build()
 
 		then:
-		result.output.contains('HariBol')
+		result.output.contains('Haribol!')
 		result.task(':osgidoc').outcome == SUCCESS
 	}
 }
